@@ -1,0 +1,35 @@
+public class RayOddToEven{
+ public static int go(int[] ray){
+   int firstOddPlace = 0;
+	int firstEvenPlace = 0;
+	boolean isOdd=false;
+	boolean isEven=false;
+	for(int i=0;i<ray.length;i++) {
+	  if(ray[i]%2==1) {
+       firstOddPlace=i;
+       isOdd=true;
+       break;
+	  }
+	}
+	if(isOdd==true) {
+	  for(int i=firstOddPlace;i<ray.length;i++) {
+		if(ray[i]%2==0) {
+	      firstEvenPlace=i;
+	      isEven=true;
+	      break;
+		}
+	  }
+	}
+	if(isOdd&&isEven==true) {
+	  if(firstEvenPlace>firstOddPlace) {
+		return firstEvenPlace-firstOddPlace;
+	  }
+	  else {
+		return firstOddPlace-firstEvenPlace; 
+	  }
+	}
+	else {
+	  return -1;
+	}
+ }
+}

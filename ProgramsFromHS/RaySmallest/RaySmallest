@@ -1,0 +1,12 @@
+public class RaySmallest{
+ public static int go(int[] ray){
+   int length=ray.length;
+   int smallest=ray[0];
+   for(int i = 1;i<length;i++) {
+     if(ray[i]<smallest) {
+   	smallest=ray[i];
+     }
+   }
+   return smallest;
+ }
+}
